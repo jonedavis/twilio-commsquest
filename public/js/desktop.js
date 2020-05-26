@@ -146,8 +146,8 @@ function createPhysicsWorld() {
   // Wall hits
   wContactListener = new Box2D.Dynamics.b2ContactListener();
   // http://www.box2dflash.org/docs/2.1a/reference/Box2D/Dynamics/b2ContactListener.html
-  wContactListener.PostSolve = function(contact, impulse) {
-    const impulseSum = impulse.normalImpulses.reduce(function(accum, item) {
+  wContactListener.PostSolve = function (contact, impulse) {
+    const impulseSum = impulse.normalImpulses.reduce(function (accum, item) {
       return accum + item;
     }, 0);
 
@@ -155,7 +155,7 @@ function createPhysicsWorld() {
     if (impulseSum >= COLLISION_IMPULSE_THRESHOLD) {
       // flash screen
       flash();
-      wallCollisionList.push({ impulse: impulseSum }).catch(function(err) {
+      wallCollisionList.push({ impulse: impulseSum }).catch(function (err) {
         console.log(err);
       });
     }
@@ -375,7 +375,7 @@ function flash() {
   flashMesh.material.color.set(rgb);
   TweenLite.to(flashMesh.material, 0.15, {
     opacity: 0.3,
-    onComplete: function() {
+    onComplete: function () {
       TweenLite.to(flashMesh.material, 0.15, {
         opacity: 0,
       });
@@ -415,7 +415,7 @@ function showSplashForLevel() {
     // Start with level complete graphic
     $splashLevelCompleted.show();
     // Shut it down after 3 seconds
-    setTimeout(function() {
+    setTimeout(function () {
       $splashLevelCompleted.hide();
       $splashScreen.show();
     }, animationDelay);
@@ -429,7 +429,7 @@ function showSplashForLevel() {
     gameState = 'idle';
   } else {
     // End of splash screens. Show game
-    setTimeout(function() {
+    setTimeout(function () {
       $splashScreen.hide();
       updateLevelHud();
       showGameCanvas(true);
@@ -479,7 +479,6 @@ function onResize() {
 // From mobile phone (controller)
 function onControllerUpdated(axis) {
   // Check if game is paused
-  console.log(axis);
   if (axis.value.isGamePaused) {
     $pauseScreen.show();
     return;
@@ -527,7 +526,7 @@ function getAvgAcceleration(rawAccel) {
   return accel;
 }
 
-$(document).ready(function() {
+$(document).ready(function () {
   function getHandles() {
     $mainMenu = $('#main-menu');
     $startGame = $('#start-game');
@@ -563,14 +562,14 @@ $(document).ready(function() {
   initGame();
 
   // Bind enterkey to trigger click event on phone number field
-  $('#txtPhoneNumber').bind('keypress', function(event) {
+  $('#txtPhoneNumber').bind('keypress', function (event) {
     if (event.keyCode === 13) {
       $('#btnStart').trigger('click');
     }
   });
 
   function openLinkInNewTab(id) {
-    $(id).on('click', function() {
+    $(id).on('click', function () {
       $(this).target = '_blank';
       window.open($(this).prop('href'));
       return false;
@@ -580,25 +579,25 @@ $(document).ready(function() {
   openLinkInNewTab('#btnLearnAbout');
   openLinkInNewTab('#btnViewSource');
 
-  $('#btnStart').on('click', function() {
+  $('#btnStart').on('click', function () {
     const phoneNumber = $('#txtPhoneNumber').val();
     if (isValidPhoneNumber(phoneNumber)) {
       const url = '/token/' + phoneNumber;
-      Twilio.Sync.CreateClient(url).then(function(client) {
+      Twilio.Sync.CreateClient(url).then(function (client) {
         syncClient = client;
 
-        syncClient.document('game-state-' + phoneNumber).then(function(doc) {
+        syncClient.document('game-state-' + phoneNumber).then(function (doc) {
           gameStateDoc = doc;
 
           syncClient
             .document('controller-state-' + phoneNumber)
-            .then(function(ctrlDoc) {
+            .then(function (ctrlDoc) {
               controllerStateDoc = ctrlDoc;
 
               console.log(controllerStateDoc);
               syncClient
                 .list('wall-collision-list-' + phoneNumber)
-                .then(function(syncList) {
+                .then(function (syncList) {
                   wallCollisionList = syncList;
 
                   // Hide entire menu
@@ -621,7 +620,7 @@ $(document).ready(function() {
                   gameState = 'initialize';
                   requestAnimationFrame(gameLoop);
                   // Subscribe to changes to the controller state document
-                  controllerStateDoc.on('updated', function(data) {
+                  controllerStateDoc.on('updated', function (data) {
                     onControllerUpdated(data);
                   });
                 });
