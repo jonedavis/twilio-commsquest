@@ -1,0 +1,76 @@
+<a href="https://github.com/jonedavis/twilio-commsquest"><img
+        style="position: absolute; top: 0; right: 0; border: 0; z-index: 5000;"
+        src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67"
+        alt="Fork me on GitHub"
+        data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+
+<div id="main-menu" class="flex-column full-height">
+
+    <div id="start-game" class="flex-center">
+
+        <div class="row">
+
+            <img class="logo" src="imgs/commsquest_title_large.gif" alt="CommsQuest IV" />
+
+            <div>
+                <input id="txtPhoneNumber" class="phone" type="number" pattern="^\d+$"
+                    placeholder="ENTER YOUR PHONE NUMBER" required />
+                <div>
+                    <button id="btnStart" class="button gray mid-font double-top-margin">SYNC PLAYER 1</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="main-menu-footer" class="footer">
+        <p class="gray">Enter your phone number to receive a text message to use your mobile phone as the
+            controller.</p>
+    </div>
+
+</div>
+
+<div id="splash-level-completed" class="flex-column full-height">
+
+    <div class="row flex-center">
+        <img id="splash-level-completed-graphic" class="animated-level-graphic">
+    </div>
+
+</div>
+
+<div id="splash-screen" class="flex-column full-height">
+
+    <div id="splash-screen-content" class="flex-center">
+
+        <div id="splash-screen-details" class="row">
+            <h1 id="splash-screen-title" class="mid-font white">Call Number</h1>
+            <h2 id="splash-screen-level-name" class="mid-font white">Level Name</h2>
+            <p id="splash-screen-level-description" class="gray">Level Description</p>
+        </div>
+
+        <div id="splash-scren-gameover-menu" class="row">
+            <a id="btnReturnToMainMenu" class="block buttonish center-margin" href="/">RETURN
+                TO MAIN MENU</a>
+            <a id="btnLearnAbout" class="block buttonish center-margin" href="https://www.twilio.com/docs/sync">LEARN
+                ABOUT SYNC</a>
+            <a id="btnViewSource" class="block buttonish center-margin"
+                href="https://github.com/jonedavis/twilio-commsquest">VIEW THE SOURCE</a>
+        </div>
+
+    </div>
+
+    <div id="splash-screen-footer" class="footer">
+        <p class="mid-font gray">Powered by Twilio</p>
+    </div>
+
+</div>
+
+<div id="desktop-level" class="call-hud">CALL 1</div>
+<div id="desktop-level-name" class="call-hud level-name"></div>
+
+<div id="pause-screen">
+    <h1 class="center-text xxlarge-font yellow">CALL</h1>
+    <h1 class="center-text xxlarge-font yellow">ON HOLD</h1>
+    <p class="center-text white">Tap the pause button on your phone to continue.</p>
+</div>

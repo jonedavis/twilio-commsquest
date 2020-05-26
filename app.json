@@ -1,0 +1,39 @@
+{
+  "name": "CommsQuest IV Twilio 5 Minute Deployable Demo",
+  "description": "A 3D puzzle maze game played using your tablet or laptop, and your phone as a controller.",
+  "website": "https://twilio.com",
+  "logo": "https://www.twilio.com/marketing/bundles/marketing/img/favicons/favicon_114.png",
+  "success_url": "/",
+  "addons": [],
+  "keywords": ["nodejs", "twilio"],
+  "env": {
+    "TWILIO_ACCOUNT_SID": {
+      "description": "Your Twilio Account SID. Get a free account at twilio.com/try-twilio",
+      "value": ""
+    },
+    "TWILIO_AUTH_TOKEN": {
+      "description": "Your Twilio Auth Token. You can get it at twilio.com/console",
+      "value": ""
+    },
+    "TWILIO_PHONE_NUMBER": {
+      "description": "The Twilio phone number you want to use to send SMS. Get one in the Twilio Console",
+      "value": ""
+    },
+    "SYNC_SERVICE_SID": {
+      "description": "The Twilio Sync Service used to update ball movement and game state. Get one in the Twilio Console.",
+      "value": ""
+    },
+    "TWILIO_API_KEY": {
+      "description": "Used to create an Access Token. Get one in the Twilio Console.",
+      "value": ""
+    },
+    "TWILIO_API_SECRET": {
+      "description": "The secret for the Twilio API Key.",
+      "value": ""
+    },
+    "PUBLIC_DOMAIN": {
+      "description": "Required to receive a text message with a link to open on your phone.",
+      "value": "Public-Url-Here. See README.md"
+    }
+  }
+}
