@@ -12,7 +12,7 @@ if (!process.env.CI) {
 const cfg = {};
 // Set this domain to either a ngrok url or public url.
 // You will receive this url in a text message to open on your phone.
-cfg.domain = process.env.PUBLIC_DOMAIN;
+cfg.domain = process.env.PUBLIC_DOMAIN || '';
 
 // HTTP Port to run our web application
 cfg.port = process.env.PORT || 3000;
