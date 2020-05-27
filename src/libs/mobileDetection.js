@@ -2,7 +2,7 @@
 // compares the user agent of the caller against a regex
 // This regex comes from http://detectmobilebrowsers.com/
 module.exports = function isCallerMobile(req) {
-  req = req || {};
+  if (!req) return false;
 
   const ua = req.headers['user-agent'].toLowerCase();
   const isMobile =
