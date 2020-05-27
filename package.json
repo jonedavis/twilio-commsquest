@@ -11,7 +11,7 @@
     "test": "eslint . && mocha test",
     "test:ci": "cross-env NODE_ENV=test run-s test cypress:ci",
     "preci": "npm run test",
-    "cypress": "cypress run --browser chrome --no-exit",
+    "cypress": "cypress run",
     "cypress:ci": "server-test start:ci http://localhost:3000 cypress",
     "format": "eslint . --fix",
     "dev": "nodemon ."
