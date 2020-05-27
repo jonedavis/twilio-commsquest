@@ -10,12 +10,6 @@ const router = express.Router();
 
 // GET: /
 router.get('/', (req, res, next) => {
-  if (process.env.CI) {
-    res.render('layouts/mobile', {
-      title: 'CommsQuest IV',
-    });
-  }
-
   const isMobile = isCallerMobile(req);
   if (!isMobile) {
     res.render('index', {
