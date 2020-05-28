@@ -1,6 +1,6 @@
 # CommsQuest IV
 
-[![Actions Status](https://github.com/twilio-labs/sample-template-nodejs/workflows/Node%20CI/badge.svg)](https://github.com/jonedavis/twilio-commsquest/actions)
+![Node CI](https://github.com/jonedavis/twilio-commsquest/workflows/Node%20CI/badge.svg)
 
 <img  src="https://twilio-cms-prod.s3.amazonaws.com/images/commsquest4_logo.width-808.png"  alt="CommsQuest IV"  width="808"  />
 
