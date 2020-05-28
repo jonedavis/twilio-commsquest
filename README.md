@@ -10,7 +10,7 @@ A web based maze game built with Twilio and Three.js. CommsQuest IV uses your mo
 
 This project was built off the [Twilio Code Exchange Node.JS GitHub template](https://github.com/twilio-labs/sample-template-nodejs/) for creating other Twilio sample/template apps. It contains a variety of features that should ideally be included in every Twilio sample app. You can use [GitHub's repository template](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template) functionality to create a copy of this.
 
-This project was made during a hackathon, and is not meant to be used in a production environment.
+**This project was made during a hackathon, and is not meant to be used in a production environment.**
 
 ### How it works
 
