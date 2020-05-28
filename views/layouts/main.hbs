@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{title}}</title>
+
+    <script type="text/javascript" src="//media.twiliocdn.com/sdk/js/sync/v0.12/twilio-sync.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/three.js/r68/three.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenLite.min.js"></script>
+
+    {{#if scripts}}
+    {{#each scripts}}
+    <script src="{{this}}"></script>
+    {{/each}}
+    {{/if}}
+
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/css/ie-styles.css">
+    <link rel="icon" type="image/ico"
+        href="https://raw.githubusercontent.com/twilio/twilio.github.io/master/favicon.ico">
+</head>
+
+<body>
+
+    {{{body}}}
+
+</body>
+
+</html>
